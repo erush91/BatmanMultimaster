@@ -15,7 +15,7 @@
 # Script arguments
  
 # ip address
-ARG1=${1:-192.168.100.53}
+ARG1=${1:-192.168.100.201}
 # mtu 
 ARG2=${2:-1560}
 # frequency
