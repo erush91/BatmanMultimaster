@@ -1,8 +1,9 @@
 # BatmanMultimaster
 
-1. Export ROS_MASTER_URI in .bashrc file
+1. Export ROS_MASTER_URI in .bashrc file (localhost or <hostname>)
 
-export ROS_MASTER_URI=http://192.168.100.51
+export ROS_MASTER_URI=http://localhost:11311
+
 
 2. Install batctl
 
@@ -12,10 +13,12 @@ export ROS_MASTER_URI=http://192.168.100.51
 
 e.g.
 
->> 127.0.0.1            localhost
->> 192.168.100.51       A01
->> 192.168.100.52       A02
->> 192.168.100.77       Hector-Linux
+>> 127.0.0.1       localhost
+>>
+>> 192.168.100.51  A01
+>> 192.168.100.52  A02
+>> 192.168.100.101 G01
+>> 192.168.100.201 B01
 
 4. Make shell scripts executable
 
@@ -27,7 +30,7 @@ e.g.
 
 e.g.
 
->> ARG1=${1:-192.168.100.53}
+>> ARG1=${1:-192.168.100.51}
 
 6. Edit setupBatman.sh Line 35: Specify WiFi device ID (find from ifconfig)
 
@@ -48,7 +51,6 @@ sudo ./startBatmanMultimaster.sh
 
 >> sudo batctl n
 
-9. Run multimaster, you should be able to see all machines
+9. Launch multimaster (https://github.com/erush91/multimaster_fkie), you should be able to see all machines
 
->> rosrun master_discovery_fkie master_discovery _mcast_group:=224.0.0.1
->> rosrun master_sync_fkie master_sync
+>> roslaunch master_discovery run_multimaster.launch
