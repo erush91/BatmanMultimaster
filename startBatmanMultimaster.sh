@@ -1,8 +1,8 @@
 # Load batman-adv kernel module 
 sudo modprobe batman-adv
 
-# Stop Network Manager (so it does not disconnect from bat / reconnect to normal WiFi automatically)
-#sudo systemctl stop NetworkManager
+# Stop Network Manager (on robots, comment out for base station since we need ethernet connection)
+sudo systemctl stop NetworkManager
 
 # Run setupBatman shell script (will print "Cannot find deevice "bat0")
 sudo ${PWD}/setupBatman.sh
