@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo ifconfig lo multicast
-sudo route add -net 224.0.0.0 netmask 240.0.0.0 dev lo
+sudo ifconfig bat0 multicast
+sudo route add -net 224.0.0.0 netmask 240.0.0.0 dev bat0
 
 cat /proc/sys/net/ipv4/ip_forward
 cat /proc/sys/net/ipv4/icmp_echo_ignore_broadcasts
